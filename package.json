@@ -1,0 +1,52 @@
+{
+  "name": "react18-visjs-timeline2",
+  "version": "1.0.0",
+  "description": "React component for the vis.js timeline module",
+  "main": "build/index.js",
+  "scripts": {
+    "format": "prettier --write ./{src,examples}/**/*.js",
+    "precommit": "lint-staged",
+    "prepublish": "npm run release",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node ./src/index.js",
+    "release": "babel ./src --ignore *.test.js --out-dir ./build",
+    "build:clean": "rm -rf dist",
+    "prebuild": "npm run build:clean",
+    "start:prod": "npm run build && node ./dist/index.js"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebFox2011/react-visjs-timeline2.git"
+  },
+  "author": "willmcclellan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lighthouse-io/react-visjs-timeline/issues"
+  },
+  "homepage": "https://github.com/Lighthouse-io/react-visjs-timeline#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/node": "^7.22.6",
+    "@babel/preset-env": "^7.22.9",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.33.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.22.5",
+    "lodash": "^4.17.21",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vis": "^4.21.0-EOL"
+  }
+}
